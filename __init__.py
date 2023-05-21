@@ -8,7 +8,7 @@
 bl_info = {  
     "name": "Flip Y and Z",  
     "author": "Mazay",  
-    "version": (0, 1),  
+    "version": (0, 2),  
     "blender": (2, 80, 0),  
     "location": "View3D > Object > Flip Y and Z",  
     "description": "Adds Flip Y and Z option to object menu.",  
@@ -25,6 +25,7 @@ class FlipYZ(bpy.types.Operator):
     """Flip Y and Z of object"""
     bl_idname = "object.flip_yz"
     bl_label = "Flip Y and Z"
+    bl_options = {'REGISTER', 'UNDO'} # Add to F3 search, Add Undo step
 
     @classmethod
     def poll(cls, context):
@@ -74,6 +75,7 @@ def register():
 
 def unregister():
     bpy.types.VIEW3D_MT_object.remove(menu_func)
+    bpy.utils.unregister_class(FlipYZ)
 
 if __name__ == "__main__":
     register()
