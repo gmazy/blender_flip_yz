@@ -3,6 +3,8 @@
 # This program is licensed under Creative Commons CC0
 # https://creativecommons.org/publicdomain/zero/1.0/
 #
+# Note: All Blender API calls are licensed under GNU GPL according to www.blender.org
+#
 # ##### END LICENSE BLOCK #####
 
 bl_info = {  
